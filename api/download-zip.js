@@ -9,7 +9,7 @@ export const config = {
 
 export default async function handler(req, res) {
   // CORS-Header hinzufügen
-  res.setHeader('Access-Control-Allow-Origin', '*'); // Erlaubt Anfragen von allen Ursprüngen
+  res.setHeader('Access-Control-Allow-Origin', 'paulrehbein.com'); // Erlaubt Anfragen von allen Ursprüngen
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS'); // Erlaubte HTTP-Methoden
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Erlaubte Header
 
