@@ -8,7 +8,7 @@ const users = {
 
 export default function handler(req, res) {
   // Füge CORS-Header hinzu
-  res.setHeader('Access-Control-Allow-Origin', 'https://portfolio-neon-five-45.vercel.app'); // Erlaubt Anfragen von allen Ursprüngen
+  res.setHeader('Access-Control-Allow-Origin', 'https://portfolio-neon-five-45.vercel.app/documents'); // Erlaubt Anfragen von allen Ursprüngen
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET,OPTIONS,PATCH,DELETE,POST,PUT"
