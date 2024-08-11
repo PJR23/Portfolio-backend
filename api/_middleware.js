@@ -3,7 +3,7 @@ const secretKey = 'your-secret-key';
 
 export const config = {
   api: {
-    bodyParser: false, // Deaktivieren des standardmäßigen Body-Parsers
+    bodyParser: false,
   },
 };
 
@@ -19,4 +19,6 @@ export async function middleware(req, ev) {
       return new Response('Unauthorized', { status: 403 });
     }
   }
+
+  return new Response(null, { status: 200 });
 }
