@@ -10,28 +10,25 @@ export const config = {
 
 export default async function handler(req, res) {
   // CORS-Header hinzufügen
-  res.setHeader('Access-Control-Allow-Origin', '*'); // Erlaubt Anfragen von allen Ursprüngen
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS'); // Erlaubte HTTP-Methoden
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization'); // Erlaubte Header
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
 
-  // Authentifizierung überprüfen
   if (!authenticateToken(req)) {
     return res.status(403).json({ message: 'Unauthorized' });
   }
 
-  const uploadsDir = path.join(process.cwd(), 'public', 'uploads'); // Sicherstellen, dass der Pfad korrekt ist
+  const uploadsDir = path.join(process.cwd(), 'api', 'files'); // Neuer Speicherort der Dateien
 
-  // Dateien im 'uploads'-Verzeichnis lesen
   try {
     const files = await fs.readdir(uploadsDir);
     const fileData = files.map(file => ({
       fileName: file,
-      filePath: `${file}`  // Hier wird der Pfad zur Datei relativ zum öffentlichen Verzeichnis erstellt
+      filePath: `${file}`
     }));
 
     return res.status(200).json({ files: fileData });

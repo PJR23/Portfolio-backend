@@ -16,21 +16,17 @@ export async function createZip(files, res) {
 
     archive.pipe(res);
 
-    // Iterieren Sie über die Liste der Dateien und fügen Sie sie dem Archiv hinzu
     for (const file of files) {
-      const filePath = path.join(process.cwd(), 'public', 'uploads', file);
-      console.log(`Processing file: ${filePath}`); // Loggen Sie den Pfad der Datei
+      const filePath = path.join(process.cwd(), 'api', 'files', file); // Neuer Speicherort der Dateien
 
       if (fs.existsSync(filePath)) {
-        archive.file(filePath, { name: file }); // Name der Datei im Archiv auf den Originalnamen setzen
-        console.log(`Added file to archive: ${file}`);
+        archive.file(filePath, { name: file });
       } else {
         console.warn(`File not found: ${filePath}`);
       }
     }
 
     await archive.finalize();
-    console.log('Archive finalized successfully');
   } catch (error) {
     console.error('Error creating ZIP archive:', error);
     res.status(500).json({ message: 'Error creating ZIP archive' });
