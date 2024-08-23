@@ -1,9 +1,7 @@
 import { generateToken } from './util/auth';
 
 const users = {
-  'admin': { password: 'adminpassword', role: 'admin' },
-  'company1': { password: 'password1', role: 'user' },
-  'company2': { password: 'password2', role: 'user' },
+  'friendlyguest': { password: '$2y$10$8HUjLGmjacBYBgR9aX.aAuqkYC9hUox861x4pQX7A6y4EcWTmQFTq', role: 'user' },
 };
 
 export default function handler(req, res) {
