@@ -1,7 +1,7 @@
 import { generateToken } from './util/auth';
 
 const users = {
-  'friendlyguest': { password: 'A7!tB@2x$P^3Ln&9Qm^Z', role: 'user' },
+  'Fortuna': { password: 'PaulRehbein!2025', role: 'user' },
 };
 
 export default function handler(req, res) {
