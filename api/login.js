@@ -5,6 +5,7 @@ const users = {
   'agilita': { password: 'PaulRehbein!2025', role: 'user' },
   'swisscom': { password: 'PaulRehbein!2025', role: 'user' },
   'ace': { password: 'PaulRehbein!2025', role: 'user' },
+  'webapps': { password: 'PaulRehbein!2025', role: 'user' },
 };
 
 export default function handler(req, res) {
