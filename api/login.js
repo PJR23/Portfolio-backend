@@ -6,6 +6,7 @@ const users = {
   'swisscom': { password: 'PaulRehbein!2025', role: 'user' },
   'ace': { password: 'PaulRehbein!2025', role: 'user' },
   'webapps': { password: 'PaulRehbein!2025', role: 'user' },
+  'zkb': { password: 'PaulRehbein!2025', role: 'user' },
 };
 
 export default function handler(req, res) {
